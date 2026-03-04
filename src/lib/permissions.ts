@@ -37,11 +37,6 @@ export const PERMISSION_KEYS = {
   // Weekly Redemption
   access_redemption: "access_redemption",
 
-  // Employees
-  access_employees: "access_employees",
-  create_employee: "create_employee",
-  edit_employee: "edit_employee",
-  delete_employee: "delete_employee",
 
 } as const;
 
@@ -96,15 +91,6 @@ export const PERMISSION_GROUPS = [
     ],
   },
   {
-    label: "Funcionários",
-    permissions: [
-      { key: PERMISSION_KEYS.access_employees, label: "Visualizar Funcionários" },
-      { key: PERMISSION_KEYS.create_employee, label: "Criar Funcionário" },
-      { key: PERMISSION_KEYS.edit_employee, label: "Editar Funcionário" },
-      { key: PERMISSION_KEYS.delete_employee, label: "Excluir Funcionário" },
-    ],
-  },
-  {
     label: "Configurações",
     permissions: [
       { key: PERMISSION_KEYS.access_settings, label: "Acessar Configurações" },
@@ -140,9 +126,6 @@ export const ROUTE_PERMISSIONS: Record<string, PermissionKey> = {
   "/fornecedores/editar": PERMISSION_KEYS.edit_supplier,
   "/historico": PERMISSION_KEYS.access_history,
   "/relatorios": PERMISSION_KEYS.access_reports,
-  "/funcionarios": PERMISSION_KEYS.access_employees,
-  "/funcionarios/novo": PERMISSION_KEYS.create_employee,
-  "/funcionarios/editar": PERMISSION_KEYS.edit_employee,
   "/configuracoes": PERMISSION_KEYS.access_settings,
   "/assinatura": PERMISSION_KEYS.access_subscription,
   "/resgate-semanal": PERMISSION_KEYS.access_redemption,
@@ -169,7 +152,7 @@ export const MENU_PERMISSIONS: Record<string, PermissionKey> = {
   "/fornecedores": PERMISSION_KEYS.access_suppliers,
   "/historico": PERMISSION_KEYS.access_history,
   "/relatorios": PERMISSION_KEYS.access_reports,
-  "/funcionarios": PERMISSION_KEYS.access_employees,
+  
   "/configuracoes": PERMISSION_KEYS.access_settings,
   "/assinatura": PERMISSION_KEYS.access_subscription,
   "/resgate-semanal": PERMISSION_KEYS.access_redemption,
