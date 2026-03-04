@@ -19,7 +19,6 @@ import {
   Gift,
   Sun,
   Moon,
-  UsersRound,
 } from "lucide-react";
 import { User, Session } from "@supabase/supabase-js";
 import logo from "@/assets/logo.jpg";
@@ -89,16 +88,12 @@ const DashboardLayoutInner = () => {
     { icon: Settings, label: "Configurações", path: "/configuracoes" },
     { icon: CreditCard, label: "Assinatura", path: "/assinatura" },
     { icon: Gift, label: "Resgate Semanal", path: "/resgate-semanal" },
-    // Only admins see Funcionários
-    ...(isAdmin ? [{ icon: UsersRound, label: "Funcionários", path: "/funcionarios" }] : []),
   ];
 
   // Filter menu items based on permissions
   const menuItems = allMenuItems.filter((item) => {
     // Dashboard always visible
     if (item.path === "/dashboard") return true;
-    // Funcionários only for admins (already filtered above)
-    if (item.path === "/funcionarios") return true;
     // Check permission
     const permKey = MENU_PERMISSIONS[item.path];
     if (permKey) return hasPermission(permKey);
@@ -110,7 +105,6 @@ const DashboardLayoutInner = () => {
     if (permLoading || isAdmin) return;
 
     const path = location.pathname;
-    // Dashboard and funcionarios are always accessible (funcionarios redirects itself)
     if (path === "/dashboard") return;
 
     // Find matching route permission

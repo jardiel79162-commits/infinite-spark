@@ -23,8 +23,6 @@ import SalesHistory from "./pages/SalesHistory";
 import Suppliers from "./pages/Suppliers";
 import SupplierForm from "./pages/SupplierForm";
 import WeeklyRedemption from "./pages/WeeklyRedemption";
-import Employees from "./pages/Employees";
-import EmployeeForm from "./pages/EmployeeForm";
 
 import DashboardLayout from "./components/DashboardLayout";
 import NotFound from "./pages/NotFound";
@@ -64,9 +62,6 @@ const App = () => (
             <Route path="/fornecedores/novo" element={<SupplierForm />} />
             <Route path="/fornecedores/editar/:id" element={<SupplierForm />} />
             <Route path="/resgate-semanal" element={<WeeklyRedemption />} />
-            <Route path="/funcionarios" element={<Employees />} />
-            <Route path="/funcionarios/novo" element={<EmployeeForm />} />
-            <Route path="/funcionarios/editar/:id" element={<EmployeeForm />} />
             <Route path="/auri" element={<Auri />} />
             
           </Route>
